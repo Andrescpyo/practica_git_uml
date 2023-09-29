@@ -17,6 +17,7 @@ Las cartas númericas suman su valor, las cartas como "__J,Q;K__" suman 10 y el 
 
 - Diagrama de clases:
 -->
+
 ![Clases](out/Diagramas/clases/clases.png)
 
 - Diagrama de secuencia:
