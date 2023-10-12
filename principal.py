@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import *
-
+from PIL import Image, ImageTk
 from tkinter import messagebox
 from juego import *
 
@@ -10,20 +10,13 @@ ventana = tk.Tk()
 ventana.title("Interfaz Grafica")
 ventana.geometry('400x500')
 
-
-boton = tk.Button(ventana, command = imagen, text = "Pedir carta", height= 2, width= 28)
-boton.place(x=100, y=350)
-
-boton = tk.Button(ventana, text = "salir", height= 2, width= 28)
-boton.place(x=100, y=458)
-
 #comandos
 def Imagen():
-    img = Image.open('sprites\española\oros\1.jpg')
+    img = Image.open('oros1.jpg')
     new_img = img.resize(300, 256)
     render = ImageTk.PhotoImage(new_img)
-    img1 = label(ventana, Image = render)
-    img1.image = render
+    img1 = Label(ventana, Image = render)
+    img1.Image = render
     img1.place(x = 18 ,y = 38)
 
 def mensaje():
@@ -31,8 +24,12 @@ def mensaje():
     if salir == 'yes':
         ventana.quit
         ventana.destroy()
-        
-    imagen1 = Button (ventana,text="Imagen",command=Imagen).grid(row=7, columnspan=9 )
+
+boton = tk.Button(ventana, command = Imagen, text = "Pedir carta", height= 2, width= 28)
+boton.place(x=100, y=350)
+
+boton1 = tk.Button(ventana, command=mensaje, text = "salir", height= 2, width= 28)
+boton1.place(x=100, y=458)
 
 ventana.mainloop()
 
